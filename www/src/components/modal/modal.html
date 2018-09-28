@@ -1,0 +1,15 @@
+<div class="vwx-modal" v-if="show">
+    <div class="weui-mask weui-animate-fade-in" @click="close"></div>
+    <div class="weui-dialog weui-animate-fade-in" :class="{bg_vsb:bgopy}">
+        <div class="weui-dialog__hd border-b" v-if="title!=''">
+            <strong class="weui-dialog__title">{{title}}</strong>
+        </div>
+        <div class="weui-dialog__bd">
+            <slot></slot>
+        </div>
+        <div class="weui-dialog__ft">
+            <a href="javascript:;" @click="cancel" class="weui-dialog__btn weui-dialog__btn_default" v-if="showCancel">{{cancelText}}</a>
+            <a href="javascript:;" @click="confirm" class="weui-dialog__btn weui-dialog__btn_primary" v-if="showConfirm">{{confirmText}}</a>
+        </div>
+    </div>
+</div>

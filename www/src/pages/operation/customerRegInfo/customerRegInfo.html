@@ -1,0 +1,153 @@
+<div class="container">
+	<table class="base_info" border="1" cellspacing="0" cellpadding="0">
+		<tr>
+			<th colspan="6">客户注册信息</th>
+		</tr>
+		<tr>
+			<th>客户姓名</th>
+			<td colspan="2">{{regInfo.customerName}}</td>
+			<th>客户注册时间</th>
+			<td colspan="2">{{regInfo.createTime}}</td>
+		</tr>
+		<tr>
+			<th>实名认证</th>
+			<td colspan="2">{{regInfo.isVerified == 1 ? '是' : '否'}}</td>
+			<th>银行卡认证</th>
+			<td colspan="2">{{regInfo.isBank == 1 ? '是' : '否'}}</td>
+		</tr>
+		<tr>
+			<th>手机认证</th>
+			<td colspan="2">{{regInfo.isPhone == 1 ? '是' : '否'}}</td>
+			<th>淘宝认证</th>
+			<td colspan="2">{{regInfo.isTaobao == 1 ? '是' : '否'}}</td>
+		</tr>
+		<tr>
+			<th>芝麻认证</th>
+			<td colspan="5"></td>
+		</tr>
+		<tr>
+			<th colspan="6">客户实名认证信息</th>
+		</tr>
+		<tr>
+			<th>客户姓名</th>
+			<td>{{regInfo.customerName}}</td>
+			<th>客户手机号</th>
+			<td>{{regInfo.telephone}}</td>
+			<th>客户身份证号</th>
+			<td>{{regInfo.idCard}}</td>
+		</tr>
+		<tr>
+			<th>性别</th>
+			<td>{{regInfo.sex == 1 ? '男' : regInfo.sex == 2 ? '女' : ''}}</td>
+			<th>客户年龄</th>
+			<td>{{regInfo.age}}</td>
+			<th>出生地址</th>
+			<td></td>
+		</tr>
+		<tr>
+			<th>现居城市</th>
+			<td>{{regInfo.nowCity}}</td>
+			<th>芝麻信用分(<span>*低于550，不审核</span>)</th>
+			<td>{{regInfo.creditScore}}</td>
+			<th>详细地址</th>
+			<td>{{regInfo.detailAddress}}</td>
+		</tr>
+		<tr>
+			<th>身份证正面照</th>
+			<td><img :src="regInfo.cardFontImg"></td>
+			<th>身份证背面照</th>
+			<td><img :src="regInfo.cardBackImg"></td>
+			<th>手持身份证照片</th>
+			<td><img :src="regInfo.cardHand"></td>
+		</tr>
+		<tr>
+			<th>运营商服务密码</th>
+			<td colspan="6">{{regInfo.servicePassword}}</td>
+		</tr>
+		<tr>
+			<th>微信</th>
+			<td>{{regInfo.wechat}}</td>
+			<th>备注</th>
+			<td colspan="3">{{regInfo.detailAddress}}</td>
+		</tr>
+		<tr>
+			<th>客服备注</th>
+			<td>{{regInfo.kfRemark}}</td>
+			<th>修改备注</th>
+			<td colspan="3"><button @click="editRemark">修改备注</button></td>
+		</tr>
+		<tr>
+			<th colspan="6">白骑士资信报告(<span>*击中风险名单或入网时间少于6个月，淘宝无地址，，电商和运营商非本人，不审核</span>)</th>
+		</tr>
+		<tr>
+			<td colspan="6"><button @click="goCreditReport">查看资信报告</button></td>
+		</tr>
+		<tr>
+			<th colspan="6">风险名单查询</th>
+		</tr>
+		<tr>
+			<td colspan="6"><button @click="goRiskNameList">风险名单查询</button></td>
+		</tr>
+		<tr>
+			<th colspan="6">芝麻欺诈名单查询</th>
+		</tr>
+		<tr>
+			<td colspan="6"><button @click="goSesameFraudNameList">芝麻欺诈名单查询</button></td>
+		</tr>
+		<tr>
+			<th colspan="6">客户工作认证信息</th>
+		</tr>
+		<tr>
+			<th>公司名称</th>
+			<td>{{regInfo.companyName}}</td>
+			<th>公司地址</th>
+			<td>{{regInfo.companyAddress}}</td>
+			<th>单位电话</th>
+			<td>{{regInfo.companyPhone}}</td>
+		</tr>
+		<tr>
+			<th>客户位置信息</th>
+			<td></td>
+			<th>通讯录(<span>*通讯录少于60，不审核</span>)</th>
+			<td colspan="3"><button @click="goAddrList">查看通讯录</button></td>
+		</tr>
+	</table>
+	
+	<table class="other_info" border="1" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr>
+				<th :colspan="[info[0].operation.length == 0 ? info[0].items.length : info[0].items.length + 1]">{{info[0].title}}</th>
+			</tr>
+			<tr>
+				<th v-for="item1 in info[0].items">{{item1.title}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td v-for="item2 in info[0].items">{{info[0].data[item2.field]}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="other_info" border="1" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr>
+				<th :colspan="[info[1].operation.length == 0 ? info[1].items.length : info[1].items.length + 1]">{{info[1].title}}</th>
+			</tr>
+			<tr>
+				<th v-for="item1 in info[1].items">{{item1.title}}</th>
+				<th v-if="info[1].operation.length > 0">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr v-for="trItem in info[1].data">
+				<td v-for="item2 in info[1].items">{{item2.field ? trItem[item2.field] : (item2.value || '')}}</td>
+				<td v-if="info[1].operation.length > 0">
+					<button @click="putInBlacklist">拉黑</button>
+					<button @click="editRank">等级修改</button>
+					<button @click="editLimit">修改贷款额度</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<button class="btn_back" @click="goBack">返回</button>
+</div>

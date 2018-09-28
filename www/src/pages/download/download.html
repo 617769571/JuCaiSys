@@ -1,0 +1,5 @@
+<div class="download_container">
+	<div class="banner">
+		<div @click="download" class="download_btn" :class="os == 'android' ? 'android' : os == 'ios' ? 'ios' : ''">{{os == 'android' ? 'Android版下载' : os == 'ios' ? 'iPhone版下载' : ''}}</div>
+	</div>
+</div>

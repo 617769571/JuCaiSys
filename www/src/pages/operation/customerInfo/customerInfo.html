@@ -1,0 +1,221 @@
+<div class="container">
+	<table class="base_info" border="1" cellspacing="0" cellpadding="0">
+		<tr>
+			<th colspan="6">客户注册信息</th>
+		</tr>
+		<tr>
+			<th>客户姓名</th>
+			<td></td>
+			<th>性别</th>
+			<td></td>
+		</tr>
+		<tr>
+			<th>手机号</th>
+			<td></td>
+			<th>年龄</th>
+			<td></td>
+		</tr>
+		<tr>
+			<th>身份证号</th>
+			<td></td>
+			<th>运营商服务密码</th>
+			<td></td>
+		</tr>
+		<tr>
+			<th>公司名称</th>
+			<td></td>
+			<th>通讯录</th>
+			<td><button @click="goAddrList">查看通讯录</button></td>
+		</tr>
+		<tr>
+			<th>公司地址</th>
+			<td></td>
+			<th>芝麻信用分</th>
+			<td></td>
+		</tr>
+		<tr>
+			<th>公司电话</th>
+			<td></td>
+			<th>客户位置信息</th>
+			<td></td>
+		</tr>
+		<tr>
+			<th>身份证正面照</th>
+			<td><img src=""></td>
+			<th>身份证背面照</th>
+			<td><img src=""></td>
+		</tr>
+		<tr>
+			<th>详细地址</th>
+			<td></td>
+			<th>现居城市</th>
+			<td></td>
+		</tr>
+		<tr>
+			<th>微信</th>
+			<td colspan="4">{{}}</td>
+		</tr>
+	</table>
+	
+	<table class="other_info" v-for="item in info" border="1" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr><th :colspan="item.items.length">{{item.title}}</th></tr>
+			<tr><th v-for="item1 in item.items">{{item1.title}}</th></tr>
+		</thead>
+		<tbody>
+			<tr><td v-for="item2 in item.items">{{[item.data][item2.field]}}</td></tr>
+		</tbody>
+	</table>
+
+	<table border="1" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr><th colspan="4">风控一组</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>电话</th>
+				<td>
+					<select v-model="form.phone">
+						<option value="0">已打</option>
+						<option value="1">未打</option>
+						<option value="2">关机</option>
+						<option value="3">停机</option>
+					</select>
+				</td>
+				<th>短信</th>
+				<td>
+					<select v-model="form.msg">
+						<option value="0">已发</option>
+						<option value="1">未发</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>微信</th>
+				<td>
+					<select v-model="form.wechat">
+						<option value="0">已联系</option>
+						<option value="1">未联系</option>
+					</select>
+				</td>
+				</td>
+				<th>完成时间</th>
+				<td><input type="date" v-model="form.endDate1"></td>
+			</tr>
+		</tbody>
+	</table>
+	<table border="1" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr><th colspan="4">风控二组</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>父母电话</th>
+				<td>
+					<select v-model="form.parentPhone">
+						<option value="0">已打</option>
+						<option value="1">未打</option>
+						<option value="2">关机</option>
+						<option value="3">空号</option>
+						<option value="4">停机</option>
+					</select>
+				</td>
+				<th>朋友或亲属电话</th>
+				<td>
+					<select v-model="form.otherPhone">
+						<option value="0">已打</option>
+						<option value="1">未打</option>
+						<option value="2">关机</option>
+						<option value="3">空号</option>
+						<option value="4">停机</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>完成时间</th>
+				<td><input type="date" v-model="form.endDate2"></td>
+				<th></th>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+	<table border="1" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr><th colspan="4">风控三组</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>法务电话</th>
+				<td>
+					<select v-model="form.lawPhone">
+						<option value="0">已打</option>
+						<option value="1">未打</option>
+						<option value="2">关机</option>
+						<option value="3">空号</option>
+					</select>
+				</td>
+				<th>催收律师函</th>
+				<td>
+					<select v-model="form.lawyerLetter">
+						<option value="0">已发</option>
+						<option value="1">未发</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>起诉</th>
+				<td>
+					<select v-model="form.sue">
+						<option value="0">否</option>
+						<option value="1">是</option>
+					</select>
+				</td>
+				<th>完成时间</th>
+				<td><input type="date" v-model="form.endDate3"></td>
+			</tr>
+			<tr>
+				<th>金额</th>
+				<td><input type="number" v-model="form.amount"></td>
+				<th>是否归还</th>
+				<td>
+					<select v-model="form.sendBack">
+						<option value="0">否</option>
+						<option value="1">是</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>程序</th>
+				<td>
+					<select v-model="form.procedure">
+						<option value="0">简宜</option>
+						<option value="1">公答</option>
+					</select>
+				</td>
+				<th>开庭日期</th>
+				<td><input type="date" v-model="form.courtDate"></td>
+			</tr>
+			<tr>
+				<th>宣判日期</th>
+				<td><input type="date" v-model="form.adjudgeDate"></td>
+				<th>执行日期</th>
+				<td><input type="date" v-model="form.executeDate"></td>
+			</tr>
+			<tr>
+				<th>是否已上老赖</th>
+				<td>
+					<select v-model="form.deadbeat">
+						<option value="0">否</option>
+						<option value="1">是</option>
+					</select>
+				</td>
+				<th></th>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="btn_box">
+		<button class="btn_submit" @click="submitInfo">确认提交</button>
+		<button class="btn_back" @click="goBack">返回</button>
+	</div>
+</div>

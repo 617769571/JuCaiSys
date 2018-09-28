@@ -1,0 +1,25 @@
+<div class="container">
+	<table border="1" cellpadding="0" cellspacing="0">
+		<thead>
+			<tr><th colspan="2">等级修改</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>用户姓名</th>
+				<td><input type="text" v-model="info.customerName"></td>
+			</tr>
+			<tr>
+				<th>等级</th>
+				<td><input type="number" v-model="info.rank"></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<div class="btn_box">
+						<button type="button" @click="submitEdit">修改</button>
+						<button type="button" @click="goBack">返回</button>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

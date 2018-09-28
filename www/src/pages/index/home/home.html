@@ -1,0 +1,15 @@
+<div class="container">
+	<table v-for="(item, index) in info" border="1" cellpadding="0" cellspacing="0">
+		<thead>
+			<tr>
+				<th colspan="2">{{index}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr v-for="(item1, index1) in item">
+				<td>{{index1}}</td>
+				<td>{{item1}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

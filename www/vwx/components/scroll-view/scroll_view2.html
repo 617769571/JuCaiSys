@@ -1,0 +1,8 @@
+<div class="scrollView2">
+    <div class="loadSpan" :class="{wait:waitTop}" v-if="waitTop"></div>
+    <div class="slvcontent" :style="{ transform: 'translateY('+moveTop+'px)',transitionDuration:moveTime+'ms' }">
+        <slot></slot>
+    </div>
+    <div class="loadSpan" :class="{wait:waitBottom}" v-if="waitBottom"></div>
+    <div class="isover" v-if="isover">没有更多信息</div>
+</div>

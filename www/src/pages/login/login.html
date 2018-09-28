@@ -1,0 +1,19 @@
+<div class="login_container">
+	<div class="title">每周口袋管理系统</div>
+	<form class="form" autocomplete="off">
+		<div class="username">
+			<label for="username">用户名：</label>
+			<input id="username" type="text" placeholder="请输入用户名" placeholder-class="login_input" v-model="username">
+		</div>
+		<div class="password">
+			<label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+			<input id="password" type="password" placeholder="请输入密码" placeholder-class="login_input" v-model="password">
+		</div>
+		<!-- <div class="identyCode">
+			<label for="identyCode">验证码：</label>
+			<input id="identyCode" type="text" placeholder="请输入验证码" placeholder-class="login_input" v-model="identyCode">
+			<img class="fr" :src="imgCode" alt="">
+		</div> -->
+		<button class="submit" type="button" @click="submitForm">立即登录</button>
+	</form>
+</div>

@@ -1,0 +1,28 @@
+.scrollView2 {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+}
+.scrollView2 .slvcontent{
+    position: relative;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.scrollView2 .loadSpan.wait{
+    display: block;
+}
+.scrollView2 .loadSpan{
+    position: absolute;
+    width: 100%;
+    display: none;
+}
+.scrollView2 .loadSpan:after{
+    left: 50%;
+}
+.scrollView2 .isover{
+    text-align: center;
+    line-height: 50px;
+    font-size: 12px;
+    color: #bbbbbb;
+}

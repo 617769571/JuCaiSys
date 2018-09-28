@@ -1,0 +1,11 @@
+<div class="financial_stat">
+	<table v-for="(item, index) in type" border="1" cellpadding="0" cellspacing="0">
+		<thead>
+			<tr><th colspan="10">{{item}}{{info.title}}</th></tr>
+			<tr><th v-for="item1 in info.value">{{item}}{{item1}}</th></tr>
+		</thead>
+		<tbody>
+			<tr><td v-for="item3 in field">{{list[index][item3]}}</td></tr>
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,27 @@
+<div class="all_container">
+	<div class="nav">
+		<div class="logo fl flex-center">每周口袋管理系统</div>
+		<div class="nav_cont fr flex-y-btw">
+			<div class="time">{{datetime}} {{day}}</div>
+			<div class="operate">
+				<span>欢迎您，{{username}}</span>|
+				<span @click="goPage(-2, 0)">首页</span>|
+				<span @click="logout">安全退出</span>|
+				<span @click="goPage(4, 0)">修改密码</span>|
+				<span @click="">未完成任务</span>
+			</div>
+		</div>
+	</div>
+	<div class="cont">
+		<div class="menu fl">
+			<div class="menu_item_box" v-for="(item, index) in menus">
+				<div class="menu_item" :data-index="index" @click="selectMenu">{{item}}</div>
+				<div class="menu_sub_item" :class="{'selected_sub_menu': selectedSubMenu == index1}" v-if="selectedMenu == index && showSubMenu" v-for="(item1, index1) in subMenus[selectedMenu]" :data-index="index1" @click="selectSubMenu">{{item1}}</div>
+			</div>
+		</div>
+		<div class="content fr">
+			<router-link to="/users/evan"></router-link>
+			<router-view></router-view>
+		</div>
+	</div>
+</div>

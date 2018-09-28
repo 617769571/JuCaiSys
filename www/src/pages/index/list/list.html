@@ -1,0 +1,51 @@
+<div class="container">
+	<form class="search" v-if="searchNumArr.length > 0" action="#" method="post">
+		<table border="1" cellspacing="0" cellpadding="0">
+			<tbody>
+				<tr v-for="item in searchNumArr">
+					<th>{{searchInfo[item].name}}</th>
+					<td><input type="text" :name="searchInfo[item].field" v-model="searchDataArr[searchInfo[item].field]"></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<div class="flex-center">
+							<button type="button" @click="getList(1); return false;">查询</button>
+							<button type="reset">清空</button>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+	<form class="list" action="#" method="post">
+		<button type="button">操作</button>
+		<button type="button" v-if="menuFlag == '1_0'" @click="striveForOrder(); return false;">抢单</button>
+		<button type="button" v-if="menuFlag == '5_0'" @click="addAccount(); return false;">添加</button>
+		<table border="1" cellspacing="0" cellpadding="0">
+			<thead>
+				<tr>
+					<th><input type="checkbox" name="id">序号</th>
+					<th v-for="item in listNumArr">{{listInfo[item].name}}</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="list_info" v-for="(listItem, index) in list">
+					<td><input type="checkbox" name="id" v-model="selectedArr" :data-borrowid="[listItem.borrowInfo ? listItem.borrowInfo.id : '']" :value="[listItem.borrowInfo ? listItem.borrowInfo.id : '']">{{index}}</td>
+					<td v-for="item in listNumArr">{{listInfo[item].value ? listInfo[item].value : listInfo[item].field[1] ? listItem[listInfo[item].field[0]][listInfo[item].field[1]] : listItem[listInfo[item].field[0]]}}</td>
+					<td><button type="button" v-for="optItem in operationNumArr" @click="btnFunc" :data-borrowid="[listItem.borrowInfo ? listItem.borrowInfo.id : '']" :data-cusid="[listItem.customer ? listItem.customer.id : '']" :data-cardid="[listItem.bankCard ? listItem.bankCard.id : '']" :data-optitem="optItem">{{operationInfo[optItem].name}}</button></td>
+				</tr>
+				<tr class="page_info">
+					<td :colspan="listNumArr.length + 2">
+						<div class="fl">每页{{pageSize}}条记录&nbsp;&nbsp;&nbsp;&nbsp;当前第{{pageNum}}页/共{{pageCount}}页</div><!-- &nbsp;&nbsp;&nbsp;&nbsp;共{{itemCount}}条记录 -->
+						<button type="button" class="first" :class="{disabled: pageNum <= 1}" @click="getList(1); return false;">首页</button>
+						<button type="button" class="previous" :class="{disabled: pageNum <= 1}" @click="getList(pageNum - 1); return false;">上一页</button>
+						<input type="number" class="page" min="1" :max="pageCount" :value="pageNum" v-on:blur="getList(pageNum); return false;">
+						<button type="button" class="next" :class="{disabled: pageNum == pageCount}" @click="getList(pageNum + 1); return false;">下一页</button>
+						<button type="button" class="last" :class="{disabled: pageNum == pageCount}" @click="getList(pageCount); return false;">尾页</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</div>

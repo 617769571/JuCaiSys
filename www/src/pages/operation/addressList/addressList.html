@@ -1,0 +1,19 @@
+<div class="container">
+	<table border="1" cellspacing="0" cellpadding="0">
+		<thead>
+			<tr>
+				<th>联系人姓名</th>
+				<th>联系人电话</th>
+				<th>次数</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr v-for="item in list">
+				<td>{{item.bookName}}</td>
+				<td>{{item.bookPhone}}</td>
+				<td>{{item.bookTimes}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<button class="btn_back" @click="goBack">返回</button>
+</div>

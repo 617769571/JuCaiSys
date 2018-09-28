@@ -1,0 +1,75 @@
+@import '~lessBase';
+.container{
+	font-size: 12px;
+
+	table{
+		margin-top: 10px;
+		border-color: @color-grey1;
+		width: 100%;
+		text-align: center;
+		
+		tr{
+			line-height: 2;
+			th{
+				background-color: @color-grey1;
+				font-weight: normal;
+			}
+		}
+	}
+	button{
+		margin: 5px;
+		padding: 3px 5px;
+		border: none;
+		border-radius: 3px;
+		background-color: @color-blue9;
+		line-height: 1;
+		color: @color-white;
+		text-align: center;
+		font-size: 10px;
+	}
+	input{
+		margin: 5px 10px;
+		padding: 5px;
+		border: 1px solid @color-grey1;
+	}
+	.search{
+		
+	}
+	.list{
+		margin-top: 20px;
+
+		table{
+			.list_info{
+				button{
+					background-color: @color-green1;
+
+					&:last-child{
+						background-color: @color-blue9;
+					}
+				}
+			}
+			.page_info{
+				background-color: @color-grey1;
+				td{
+					padding: 0 20px;
+
+					div{
+						margin-right: 10px;
+						line-height: 3;
+					}
+					button.disabled{
+						background: none;
+						color: @color-grey2;
+						border: 1px solid @color-grey2;
+					}
+					.page{
+						padding: 3px 5px;
+						border: 1px solid @color-grey2;
+						width: auto;
+						text-align: center; 
+					}
+				}
+			}
+		}
+	}
+}

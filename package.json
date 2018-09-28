@@ -1,0 +1,28 @@
+{
+  "name": "ptq-h5-c-3.5",
+  "version": "1.0.0",
+  "description": "```\r npm i\r ```\r ## 目录结构\r ![目录结构](https://dn-coding-net-production-file.qbox.me/536caf40-5e26-11e8-9a94-2fb7ef705b45.png?e=1527041575&token=goE9CtaiT5YaIP6ZQ1nAafd_C1Z_H2gVP8AwuC-5:ROztw_KFwxV-2Qdq_pNcM-yGkeM=)\r # 开发调试\r ```\r npm run dev\r ```\r * 修改webpack配置文件\r ```\r     devServer: {\r         historyApiFallback: true,\r         noInfo: true,\r         host: \"192.168.1.155\",\r         port: 8080,\r         publicPath: '/'\r     }\r ```\r host修改为本机ip",
+  "main": "proxy.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "compression": "^1.7.2",
+    "connect-history-api-fallback": "^1.5.0",
+    "docsify-cli": "^4.2.1",
+    "express": "^4.16.3",
+    "fs": "0.0.1-security",
+    "http-proxy": "^1.17.0",
+    "serve-static": "^1.13.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.coding.net/cdwl/PTQ-H5-C-3.5.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

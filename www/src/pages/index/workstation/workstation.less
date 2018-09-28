@@ -1,0 +1,64 @@
+@import '~lessBase';
+.workstation{
+	padding-bottom: 30px;
+	
+	table{
+		margin-top: 20px;
+		border-color: @color-grey1;
+		width: 100%;
+		line-height: 2;
+		text-align: center;
+		font-size: 14px;
+
+		thead{
+			background-color: @color-grey1;
+		}
+	}
+	.user_amount{
+		color: @color-white;
+
+		thead{
+			th{
+				&.reg_num{
+					background-color: #bc442a;
+				}
+				&.apply_num{
+					background-color: #3e79be;
+				}
+				&.loan_num{
+					background-color: #daa83e;
+				}
+			}
+		}
+		tbody{
+			line-height: 4;
+
+			td{
+				&.reg_num{
+					background-color: #eb6b4f;
+				}
+				&.apply_num{
+					background-color: #4a90e2;
+				}
+				&.loan_num{
+					background-color: #ffc549;
+				}
+			}
+		}
+	}
+	.loan_amount{
+		width: 55%;
+
+		tr, td{
+			border-left: none;
+			border-right: none;
+		}
+	}
+	.blank{
+		width: 40%;
+
+		tr, td{
+			border: none;
+		}
+	}
+}

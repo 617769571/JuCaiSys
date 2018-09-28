@@ -1,0 +1,62 @@
+@import '~lessBase';
+.container{
+	table{
+		margin: 20px auto 0;
+		border-color: @color-grey1;
+		width: 97%;
+		line-height: 2;
+		font-size: 14px;
+		text-align: center;
+
+		th{
+			background-color: @color-grey1;
+			font-weight: normal;
+		}
+	}
+	button{
+		margin: 5px;
+		padding: 3px 5px;
+		border: none;
+		border-radius: 3px;
+		background-color: @color-blue9;
+		line-height: 1;
+		color: @color-white;
+		text-align: center;
+	}
+	input{
+		border: 1px solid @color-grey1;
+	}
+	.base_info{
+		th{
+			background-color: @color-grey1;
+
+			&>span{
+				color: red;
+			}
+		}
+		
+		button{
+			display: block;
+			margin: 0 auto;
+			background-color: @color-green1;
+		}
+	}
+	.other_info{
+		thead{
+			tr:first-child{
+				background-color: #fff;
+			}
+		}
+		button{
+			background-color: @color-green1;
+
+			&:last-child{
+				background-color: @color-blue9;
+			}
+		}
+	}
+	.btn_box{
+		margin: 20px auto;
+		text-align: center;
+	}
+}
