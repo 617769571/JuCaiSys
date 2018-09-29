@@ -183,7 +183,7 @@ module.exports = Page({
         var data = {};
         if(this.menuFlag == '1_1'){
             data = {
-                customerId: cusId,
+                id: borrowId,
                 kfName: wx.getStorageSync('user').name,
                 type: 1,
                 isKf: 1
@@ -219,7 +219,7 @@ module.exports = Page({
         var data = {};
         if(this.menuFlag == '1_1'){
             data = {
-                customerId: cusId,
+                id: borrowId,
                 kfName: wx.getStorageSync('user').name,
                 type: 1,
                 isKf: 2
@@ -239,6 +239,7 @@ module.exports = Page({
                 isFk2: 2
             }
         }
+        console.log(this.menuFlag);
         A.updata.audit(data).then(res => {
             if(res.code == 0){
                 wx.alert(res.data, function(){

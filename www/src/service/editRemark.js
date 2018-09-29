@@ -11,6 +11,6 @@ module.exports = {
     },
     // 提交备注
     editRemark(data) {
-        return this.getTData({ url: '/buttonReview', data: data });
+        return this.getTData({ url: '/updateKfRemark', data: data });
     }
 }

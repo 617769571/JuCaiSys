@@ -19,7 +19,7 @@ module.exports = Page({
                 this.info = {
                     type: 1,
                     customerId: res.data.id,
-                    kfName: res.data.kfName,
+                    // kfName: res.data.kfName,
                     kfRemark: res.data.kfRemark
                 };
             }
