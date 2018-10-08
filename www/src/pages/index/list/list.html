@@ -31,7 +31,7 @@
 			</thead>
 			<tbody>
 				<tr class="list_info" v-for="(listItem, index) in list">
-					<td><input type="checkbox" name="id" v-model="selectedArr" :data-borrowid="[listItem.borrowInfo ? listItem.borrowInfo.id : '']" :value="[listItem.borrowInfo ? listItem.borrowInfo.id : '']">{{index}}</td>
+					<td><input type="checkbox" name="id" v-model="selectedArr" :data-borrowid="[listItem.borrowInfo ? listItem.borrowInfo.id : '']" :value="[listItem.borrowInfo ? listItem.borrowInfo.id : '']">{{index + 1}}</td>
 					<td v-for="item in listNumArr">{{listInfo[item].value ? listInfo[item].value : listInfo[item].field[1] ? listItem[listInfo[item].field[0]][listInfo[item].field[1]] : listItem[listInfo[item].field[0]]}}</td>
 					<td><button type="button" v-for="optItem in operationNumArr" @click="btnFunc" :data-borrowid="[listItem.borrowInfo ? listItem.borrowInfo.id : '']" :data-cusid="[listItem.customer ? listItem.customer.id : '']" :data-cardid="[listItem.bankCard ? listItem.bankCard.id : '']" :data-optitem="optItem">{{operationInfo[optItem].name}}</button></td>
 				</tr>

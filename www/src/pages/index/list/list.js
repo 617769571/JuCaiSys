@@ -17,14 +17,12 @@ module.exports = Page({
         listNumArr: [], // 该角色该列表的列表项编号数组
         operationNumArr: [], // 该角色该列表的操作编号数组
         url: '', // 该角色该列表的接口路径
-
         searchDataArr: {}, // 查询数据对象
         list: [], // 该角色该列表数据
         pageNum: 0,
         pageCount: 0,
-        pageSize: 10,
+        pageSize: 30,
         itemCount: 0,
-
         selectedArr: [], // 选中的行元素
     },
     watch: {

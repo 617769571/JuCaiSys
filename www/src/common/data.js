@@ -720,7 +720,7 @@ module.exports = {
 				4: [1, 3, 4]
 			},
 			url: '',
-			params: { isBlack: 1, status: 2, isRepay: 0 }
+			params: { isBlack: 1, status: 2, isRepay: 0 ,isLoan:1}
 		},
 		'3_4': {
 			search: [0, 1, 2, 9, 5, 10],
