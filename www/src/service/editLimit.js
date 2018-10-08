@@ -7,10 +7,10 @@ import S from '../config/state.js';
 module.exports = {
     // 获取贷款额度
     getLimitInfo(id) {
-        return this.getTData({ url: '',  data: { id: id } });
+        return this.getTData({ url: '/get/CustomerAmount',  data: { customerId: id } });
     },
     // 提交贷款额度信息
     editLimit: function(data){
-    	return this.getTData({ url: '',  data: data });
+    	return this.getTData({ url: '/update/Customer',  data: data });
     }
 }

@@ -22,7 +22,7 @@ const editLoanAmount = () => import('./operation/editLoanAmount/editLoanAmount.j
 const renewal = () => import('./operation/renewal/renewal.js');
 const editAccount = () => import('./operation/editAccount/editAccount.js');
 const editRate = () => import('./operation/editRate/editRate.js');
-
+// const editLimit = () => import('./operation/editLimit/editLimit.js');
 // 下载app
 import download from './download/download';
 // 404

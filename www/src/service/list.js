@@ -39,6 +39,6 @@ module.exports = {
     },
     // 移出黑名单
     removeFromBlacklist: function(id){
-    	return this.getTData({ url: '/update/Customer', data: { isDel: 0, id: id } });
+    	return this.getTData({ url: '/update/Customer', data: { isBlack: 1, id: id } });
     }
 }

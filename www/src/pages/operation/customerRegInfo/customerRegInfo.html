@@ -23,7 +23,7 @@
 		</tr>
 		<tr>
 			<th>芝麻认证</th>
-			<td colspan="5"></td>
+			<td colspan="5">是</td>
 		</tr>
 		<tr>
 			<th colspan="6">客户实名认证信息</th>
@@ -38,7 +38,7 @@
 		</tr>
 		<tr>
 			<th>性别</th>
-			<td>{{regInfo.sex == 1 ? '男' : regInfo.sex == 2 ? '女' : ''}}</td>
+			<td>{{regInfo.sex == 1 ? '男' : (regInfo.sex == 2 ? '女' : '不明')}}</td>
 			<th>客户年龄</th>
 			<td>{{regInfo.age}}</td>
 			<th>出生地址</th>
@@ -143,7 +143,7 @@
 				<td v-for="item2 in info[1].items">{{item2.field ? trItem[item2.field] : (item2.value || '')}}</td>
 				<td v-if="info[1].operation.length > 0">
 					<button @click="putInBlacklist">拉黑</button>
-					<button @click="editRank">等级修改</button>
+					<!-- <button @click="editRank">等级修改</button> -->
 					<button @click="editLimit">修改贷款额度</button>
 				</td>
 			</tr>

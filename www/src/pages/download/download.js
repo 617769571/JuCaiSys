@@ -23,9 +23,9 @@ module.exports = Page({
     // 下载
     download: function(){
         if(this.os == 'android'){
-            window.location.href = 'http://47.96.118.227/jcapp.apk';
+            window.location.href = 'https://www.jctt.top/jcapp.apk';
         }else if(this.os == 'ios'){
-            window.location.href = 'http://47.96.118.227/jcapp.ipa';
+            window.location.href = 'https://www.jctt.top/jcapp.ipa';
         }
     }
 });

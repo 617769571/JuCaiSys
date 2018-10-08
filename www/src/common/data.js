@@ -616,7 +616,7 @@ module.exports = {
 				4: [1, 6, 7]
 			},
 			url: '',
-			params: { isBlack: 1, isKf: 1, isFk2: 0 }
+			params: { isBlack: 1, isKf: 1, isFk2: 0 ,isFk1 : 0,}
 		},
 		'2_1': {
 			search: [],
@@ -626,7 +626,7 @@ module.exports = {
 				4: [1, 6, 7] 
 			},
 			url: '',
-			params: { isBlack: 1, isKf: 1, isFk1: 1 }
+			params: { isBlack: 1, isKf: 1, isFk1: 1 ,isFk2 :0}
 		},
 		'2_2': {
 			search: [0, 1, 2, 8, 5],
@@ -709,7 +709,7 @@ module.exports = {
 				4: [1]
 			},
 			url: '',
-			params: { isBlack: 1, isLoan: 1, isOverdue: 1, status: 2, isRepay: 0 }
+			params: { isBlack: 1, isLoan: 1, isOverdue: 0, status: 2, isRepay: 0 }
 		},
 		'3_3': {
 			search: [0, 1, 2, 8, 5],
