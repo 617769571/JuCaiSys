@@ -561,7 +561,7 @@ module.exports = {
 				4: [0, 1, 5],
 			},
 			url: '',
-			params: { isBlack: 1 }
+			params: { isBlack: 1}
 		},
 		'1_3': {
 			search: [0, 1],
@@ -636,7 +636,7 @@ module.exports = {
 				4: []
 			},
 			url: '',
-			params: { isBlack: 1, status: 2, isRepay: 0 }
+			params: { isBlack: 1, status: 2, isRepay: 0 ,isLoan: 1 }
 		},
 		'2_3': {
 			search: [0, 1, 2, 3],
