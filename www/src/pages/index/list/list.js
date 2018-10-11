@@ -98,8 +98,13 @@ module.exports = Page({
     // 导出excel
     exportsExcel: function(){
         var defaultParams = Object.assign({}, this.defaultParams);
-        var data = Object.assign(defaultParams, this.searchDataArr)
-        window.open('http://www.jctt.top:8080/jucai/export/Repay?' + encodeURIComponent(data), '_blank')   
+        var data = Object.assign(defaultParams, this.searchDataArr);
+        var param = '';
+        for(var key in data){
+            param += key + '=' + data[key] + '&';
+        }
+        param = param.substring(0, param.length - 1);
+        window.open('http://www.jctt.top:8080/jucai/export/Repay?' + param, '_blank')   
     },
     // 抢单
     striveForOrder: function(){
