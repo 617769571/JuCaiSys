@@ -4,6 +4,7 @@
 import _smp from '../common/simple.js';
 // 状态码
 import S from '../config/state.js';
+// import Axios from 'axios';
 module.exports = {
     // 获取列表数据
     getList(url, data) {

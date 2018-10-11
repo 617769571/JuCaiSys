@@ -4,13 +4,17 @@
 			<tbody>
 				<tr v-for="item in searchNumArr">
 					<th>{{searchInfo[item].name}}</th>
-					<td><input type="text" :name="searchInfo[item].field" v-model="searchDataArr[searchInfo[item].field]"></td>
+					<td v-if="searchInfo[item].type != 1"><input type="text" :name="searchInfo[item].field" v-model="searchDataArr[searchInfo[item].field]"></td>
+					<td v-if="searchInfo[item].type == 1">
+						<input type="date" :name="searchInfo[item].field[0]" v-model="searchDataArr[searchInfo[item].field[0]]"> - 
+						<input type="date" :name="searchInfo[item].field[1]" v-model="searchDataArr[searchInfo[item].field[1]]">
+					</td>
 				</tr>
 				<tr>
 					<td colspan="2">
 						<div class="flex-center">
 							<button type="button" @click="getList(1); return false;">查询</button>
-							<button type="reset">清空</button>
+							<button type="button" @click="clearSearch(); return false;">清空</button>
 						</div>
 					</td>
 				</tr>
@@ -18,7 +22,7 @@
 		</table>
 	</form>
 	<form class="list" action="#" method="post">
-		<button type="button">操作</button>
+		<button type="button" v-if="menuFlag == '3_3'" @click="exportsExcel(); return false;">导出Excel</button>
 		<button type="button" v-if="menuFlag == '1_0'" @click="striveForOrder(); return false;">抢单</button>
 		<button type="button" v-if="menuFlag == '5_0'" @click="addAccount(); return false;">添加</button>
 		<table border="1" cellspacing="0" cellpadding="0">

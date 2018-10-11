@@ -93,22 +93,22 @@ module.exports = {
 		}, {
 			index: 3,
 			name: '注册时间',
-			field: '',
+			field: ['startTime', 'endTime'],
 			type: 1
 		}, {
 			index: 4,
 			name: '放款时间',
-			field: '',
+			field: ['loanStartTime', 'loanEndTime'],
 			type: 1
 		}, {
 			index: 5,
 			name: '应还时间',
-			field: '',
+			field: ['shouldStartTime', 'shouldEndTime'],
 			type: 1
 		}, {
 			index: 6,
 			name: '实还时间',
-			field: '',
+			field: ['realStartTime', 'realEndTime'],
 			type: 1
 		}, {
 			index: 7,
@@ -116,12 +116,14 @@ module.exports = {
 			children: ['请选择', '申请中', '未放款', '未还款', '已还款', '已展期', '已分期', '审核未通过'],
 			field: 'status',
 			type: 2
-		}, {
-			index: 8,
-			name: '申请时间',
-			field: '',
-			type: 1
-		}, {
+		}, 
+		// {
+		// 	index: 8,
+		// 	name: '申请时间',
+		// 	field: '',
+		// 	type: 1
+		// }, 
+		{
 			index: 9,
 			name: '订单号',
 			field: 'orderNo',
@@ -149,170 +151,6 @@ module.exports = {
 			type: 2
 		}
 	],
-	// 列表项
-	/*listItem: [
-		{
-			index: 0,
-			name: '客户姓名',
-			field: 'customerName'
-		}, {
-			index: 1,
-			name: '手机号',
-			field: 'telephone'
-		}, {
-			index: 2,
-			name: '证件号',
-			field: 'idCard'
-		}, {
-			index: 3,
-			name: '实名认证',  //是否实名认证：0-否，1-是
-			field: 'isVerifiedStr'
-		}, {
-			index: 4,
-			name: '银行卡认证',//是否银行卡认证：0-否，1-是
-			field: 'isBankStr'
-		}, {
-			index: 5,
-			name: '手机认证',//是否手机认证：0-否，1-是
-			field: 'isPhoneStr'
-		}, {
-			index: 6,
-			name: '淘宝认证',//是否淘宝认证：0-否，1-是
-			field: 'isTaobaoStr'
-		}, {
-			index: 7,
-			name: '状态', //是否黑名单：0-是，1-否  
-			field: 'isBlackStr'
-		}, {
-			index: 8,
-			name: '注册日期',
-			field: 'createTime'
-		}, {
-			index: 9,
-			name: '客户来源',//此字段不用
-			field: ''
-		}, {
-			index: 10,
-			name: '银行卡名称',//开户行
-			field: 'bankName'
-		}, {
-			index: 11,
-			name: '银行卡号',//银行卡账号
-			field: 'bankNo'
-		}, {
-			index: 12,
-			name: '申请时间',
-			field: 'createTime'
-		}, {
-			index: 13,
-			name: '贷款金额',
-			field: 'borrowAmount'
-		}, {
-			index: 14,
-			name: '放款金额',
-			field: 'giveAmount'
-		}, {
-			index: 15,
-			name: '手续费',
-			field: 'handlingFee'
-		}, {
-			index: 16,
-			name: '期限',//还款期限/天
-			field: 'termDay'
-		}, {
-			index: 17,
-			name: '应还时间',
-			field: 'shouldRepayTime'
-		}, {
-			index: 18,
-			name: '实际还款时间',
-			field: 'repayTime'
-		}, {
-			index: 19,
-			name: '是否逾期',//是否逾期：0-逾期，1-未逾期
-			field: 'isOverdueStr'
-		}, {
-			index: 20,
-			name: '逾期天数',
-			field: 'overdueDays'
-		}, {
-			index: 21,
-			name: '放款时间',
-			field: 'loanTime'
-		}, {
-			index: 22,
-			name: '审核时间',
-			field: 'reviewTime'
-		}, {
-			index: 23,
-			name: '状态', // 还款状态   //是否还款：0-未还款，1-已还款
-			field: 'isRepayStr'
-		}, {
-			index: 24,
-			name: '平台标识',//平台标志：1-android，2-ios
-			field: 'sign'
-		}, {
-			index: 25,
-			name: '订单号',
-			field: 'orderNo'
-		}, {
-			index: 26,
-			name: '审核人员',//哪位审核人员？
-			field: ''
-		}, {
-			index: 27,
-			name: '逾期费',
-			field: 'overdueFee'
-		}, {
-			index: 28,
-			name: '滞纳金',
-			field: 'lataAmount'
-		}, {
-			index: 29,
-			name: '展期时间',
-			field: ''
-		}, {
-			index: 30,
-			name: '风险评估状态',//先放着对接第三方的
-			field: ''
-		}, {
-			index: 31,
-			name: '当日贷款金额',//客户当日贷款金额？
-			field: ''
-		}, {
-			index: 32,
-			name: '日期',//什么日期？
-			field: ''
-		}, {
-			index: 33,
-			name: '申请日期',
-			field: ''
-		}, {
-			index: 34,
-			name: '工作认证',//先放着可能不用
-			field: ''
-		}, {
-			index: 35,
-			name: '应还金额',
-			field: 'repayAmount'
-		}, {
-			index: 36,
-			name: '状态', // 申请状态
-			field: 'status'
-		}, {
-			index: 37,
-			name: '状态', // 审核状态
-			field: 'shStatus'
-		}, {
-			index: 38,
-			name: '角色',
-			field: ''
-		}, {
-			index: 39,
-			name: '账号',
-			field: ''
-		}
-	],*/
 	listItem: [
 		{
 			index: 0,
@@ -576,7 +414,7 @@ module.exports = {
 			params: {}
 		},
 		'1_4': {
-			search: [0, 1, 2, 11, 9, 8, 5, 6],
+			search: [0, 1, 2, 11, 9, 5, 6], // [0, 1, 2, 11, 9, 8, 5, 6]
 			listItem: [0, 1, 2, 10, 11, 13, 15, 16, 27, 28, 12, 18, 21, 22, 23, 25],
 			operation: {
 				0: [],
@@ -629,7 +467,7 @@ module.exports = {
 			params: { isBlack: 1, isKf: 1, isFk1: 1 ,isFk2 :0}
 		},
 		'2_2': {
-			search: [0, 1, 2, 8, 5],
+			search: [0, 1, 2, 5], // [0, 1, 2, 8, 5]
 			listItem: [0, 1, 2, 10, 11, 13, 15, 16, 19, 20, 35, 17, 12, 21, 22, 23, 25],
 			operation: {
 				1: [],
@@ -712,7 +550,7 @@ module.exports = {
 			params: { isBlack: 1, isLoan: 1, isOverdue: 0, status: 2, isRepay: 0 }
 		},
 		'3_3': {
-			search: [0, 1, 2, 8, 5],
+			search: [0, 1, 2, 5], // [0, 1, 2, 8, 5]
 			listItem: [0, 1, 2, 10, 11, 12, 15, 16, 17, 19, 20, 27, 28, 12, 21, 22, 23],
 			operation: {
 				2: [1, 3, 4],
@@ -734,7 +572,7 @@ module.exports = {
 			params: { isBlack: 1, status: 2, isExtensionStr: '是' }
 		},
 		'3_5': {
-			search: [0, 1, 2, 11, 9, 8, 5, 6],
+			search: [0, 1, 2, 11, 9, 12, 5, 6], // [0, 1, 2, 11, 9, 8, 5, 6]
 			listItem: [0, 1, 2, 10, 11, 13, 15, 16, 27, 28, 12, 18, 21, 22, 23, 25],
 			operation: {
 				2: [],

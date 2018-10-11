@@ -61,6 +61,11 @@ module.exports = Page({
         that.url = info.url || '/listDTO';
         that.defaultParams = info.params || {};
     },
+    // 清空查询条件
+    clearSearch: function(){
+        this.searchDataArr = {};
+        this.getList(1);
+    },
     // 获取列表数据
     getList: function(page){
         var pageNum = page || 1;
@@ -89,6 +94,12 @@ module.exports = Page({
         var optItem = e.currentTarget.dataset.optitem;
         this[this.operationInfo[optItem].func](e);
         return false;
+    },
+    // 导出excel
+    exportsExcel: function(){
+        var defaultParams = Object.assign({}, this.defaultParams);
+        var data = Object.assign(defaultParams, this.searchDataArr)
+        window.open('http://www.jctt.top:8080/jucai/export/Repay?' + encodeURIComponent(data), '_blank')   
     },
     // 抢单
     striveForOrder: function(){
