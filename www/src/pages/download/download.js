@@ -25,7 +25,7 @@ module.exports = Page({
         if(this.os == 'android'){
             window.location.href = 'https://www.jctt.top/jcapp.apk';
         }else if(this.os == 'ios'){
-            window.location.href = 'pgyer.com/x72s';
+            window.location.href = 'https://www.pgyer.com/x72s';
         }
     }
 });

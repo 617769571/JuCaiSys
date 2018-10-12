@@ -232,7 +232,7 @@ module.exports = {
 		}, {
 			index: 19,
 			name: '是否逾期',//是否逾期：逾期，未逾期
-			field: ['dynamic', 'isOverdueStr']
+			field: ['dynamic', 'isOverdue']
 		}, {
 			index: 20,
 			name: '逾期天数',
