@@ -59,6 +59,7 @@ module.exports = Page({
     onLoad: function (opts) {
         this.id = this.$route.query.id;
         // this.getInfo();
+        debugger;
     },
     // 获取客户基本信息
     getInfo: function(){

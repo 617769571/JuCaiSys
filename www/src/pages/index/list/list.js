@@ -24,6 +24,7 @@ module.exports = Page({
         pageSize: 30,
         itemCount: 0,
         selectedArr: [], // 选中的行元素
+        totalNum:0
     },
     watch: {
         $route(val) {
@@ -84,6 +85,8 @@ module.exports = Page({
                         this.list = res.data.list;
                     }
                     this.pageCount = res.data.all_paging;
+                    this.totalNum = res.data.total;
+
                     this.pageNum = res.data.paging;
                 }
             }, err => {})
@@ -136,11 +139,11 @@ module.exports = Page({
     // 查看客户注册信息
     goCusInfo: function(e){
         var id = e.currentTarget.dataset.cusid;
-        if(this.menuFlag == '2_4' || this.menuFlag == '2_6'){
-            A.router.push({ path: '/customerInfo?id=' + id});
-        }else{
+        // if(this.menuFlag == '2_6'){
+        //     A.router.push({ path: '/customerInfo?id=' + id});
+        // }else{
             A.router.push({ path: '/customerRegInfo?id=' + id});
-        }
+        // }
     },
     // 打款
     makeMoney: function(e){

@@ -1,6 +1,7 @@
 import { Page } from "vwx";
 import tpl from "./customerRegInfo.html";
 import './customerRegInfo.less';
+import Axios from 'axios';
 
 var timer = null;
 module.exports = Page({
@@ -97,6 +98,34 @@ module.exports = Page({
     // 修改贷款额度
     editLimit: function(e){
         A.router.push({ path: '/editLimit?id=' + this.id});
+    },
+    editAmount:function(item){
+        let that = this;
+        var popup = prompt("修改放款金额",item.borrowAmount);
+        if(popup){
+            let amount;
+            try{
+                amount = Number(popup);
+            }catch(err){
+                alert('请输入正确的金额');
+                return false;
+            }
+            // console.log(item.id);
+            Axios.get('/jucai/update/LoanAmount', {params:{
+                borrowInfoId: Number(item.id),
+                amount: amount
+                }}).then(function (response) {
+                    console.log(response);
+                    if(response.data.code == 0){
+                        alert('修改成功');
+                        that.getInfo();
+                    }else{
+                        alert(response.data.data);
+                    }
+                }).catch(function (error) {
+                    console.log(error);
+                });
+        }
     },
     // 返回
     goBack: function(){

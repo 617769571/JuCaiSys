@@ -41,7 +41,7 @@
 				</tr>
 				<tr class="page_info">
 					<td :colspan="listNumArr.length + 2">
-						<div class="fl">每页{{pageSize}}条记录&nbsp;&nbsp;&nbsp;&nbsp;当前第{{pageNum}}页/共{{pageCount}}页</div><!-- &nbsp;&nbsp;&nbsp;&nbsp;共{{itemCount}}条记录 -->
+						<div class="fl">每页{{pageSize}}条记录&nbsp;&nbsp;&nbsp;&nbsp;当前第{{pageNum}}页/共{{pageCount}}页</div><span>数量：{{totalNum}}</span><!-- &nbsp;&nbsp;&nbsp;&nbsp;共{{itemCount}}条记录 -->
 						<button type="button" class="first" :class="{disabled: pageNum <= 1}" @click="getList(1); return false;">首页</button>
 						<button type="button" class="previous" :class="{disabled: pageNum <= 1}" @click="getList(pageNum - 1); return false;">上一页</button>
 						<input type="number" class="page" min="1" :max="pageCount" :value="pageNum" v-on:blur="getList(pageNum); return false;">
